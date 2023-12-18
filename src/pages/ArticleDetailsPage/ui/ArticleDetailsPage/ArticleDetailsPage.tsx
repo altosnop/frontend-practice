@@ -1,18 +1,30 @@
-/* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-// import { useTranslation } from 'react-i18next';
+import { ArticleDetails } from 'entities/Article';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
   className?: string;
 }
 
-export const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-  // const { t } = useTranslation('article');
+const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
+  const { className } = props;
+  const { t } = useTranslation('article-details');
+  const { id } = useParams<{ id: string }>();
+
+  if (!id) {
+    return (
+      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        {t('Стаття не знайдена')}
+      </div>
+    );
+  }
+
   return (
     <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-      <h1>Article Details Page</h1>
+      <ArticleDetails id={id} />
     </div>
   );
 };
