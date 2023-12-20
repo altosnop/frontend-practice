@@ -108,13 +108,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://w7.pngwing.com/pngs/870/943/png-transparent-guy-s-fawkes-art-anonymous-computer-icons-security-hacker-avatar-anonymous-face-head-mask.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://w7.pngwing.com/pngs/870/943/png-transparent-guy-s-fawkes-art-anonymous-computer-icons-security-hacker-avatar-anonymous-face-head-mask.png"
     }
   ],
   "profile": {

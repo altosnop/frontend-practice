@@ -6,7 +6,7 @@ export const fetchArticleById = createAsyncThunk<
   Article,
   string,
   ThunkConfig<string>
->('article/fetchArticleById', async (articleId, thunkApi) => {
+>('articleDetails/fetchArticleById', async (articleId, thunkApi) => {
   const { extra, rejectWithValue } = thunkApi;
 
   try {
@@ -18,7 +18,6 @@ export const fetchArticleById = createAsyncThunk<
 
     return response.data;
   } catch (e) {
-    console.log(e);
     return rejectWithValue('error');
   }
 });
